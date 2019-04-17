@@ -10,6 +10,7 @@
     {% else %}
         <h2>没有用户登录</h2>
     {% endif %}
-    <a href="/list/">进入列表页</a>
+    <!--<a href="/list/">进入列表页</a>-->
+    <a href="{% url 'booktest:list' %}">进入列表页</a>
 </body>
 </html>

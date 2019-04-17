@@ -12,7 +12,8 @@
         {% empty %}
             <span>暂时没有角色</span>
         {% endfor %}
-        <a href="/list/">返回列表页</a>
+        <!--<a href="/list/">返回列表页</a>-->
+        <a href="{% url 'booktest:list' %}">返回列表页</a>
     </ul>
 
 </body>
