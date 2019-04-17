@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+    {% if username %}
+        <h2>{{username}}</h2>
+    {% else %}
+        <h2>没有用户登录</h2>
+    {% endif %}
+    <a href="/list/">进入列表页</a>
+</body>
+</html>
