@@ -8,11 +8,12 @@
     <h2>问题：{{ques.qname}}</h2>
     <ul>
         投票选项：<br><br>
-        <form action="">
+        <form action="/result/" method="post">
             {% for choose in ques.choose_set.all %}
-                <li><input type="radio" name="vote">{{choose}}</li>
+                <li><input type="radio" name="vote" value="{{choose.id}}">{{choose}}</li>
             {% endfor %}
             <br><input type="submit" value="投票">
+            <input type="hidden" value="{{ques.id}}" name="quesid">
         </form>
 
     </ul>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>问题列表页</title>
+</head>
+<body>
+    <h2>问题:{{ ques.qname}}</h2>
+    <ul>
+        <h3>投票结果：</h3>
+        {% for choose in ques.choose_set.all %}
+            <li>{{choose.cname}}--{{choose.cvote}}</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>

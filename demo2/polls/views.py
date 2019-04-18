@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Question,Choose
+from django.http import HttpResponseRedirect, HttpResponse
 # Create your views here.
 
 
@@ -9,8 +10,14 @@ def list(request):
 
 
 def detail(request, quesid):
-    print(111111)
     ques = Question.objects.get(pk=quesid)
-    # chooses = Question.choose_set.get()
     return render(request, 'polls/detail.html', {'ques': ques})
 
+def result(request):
+    quesid = request.POST["quesid"]
+    ques = Question.objects.get(pk=quesid)
+    qvote = request.POST["vote"]
+    choose = Choose.objects.get(pk=qvote)
+    choose.cvote += 1
+    choose.save()
+    return render(request, 'polls/result.html', {'ques': ques})
