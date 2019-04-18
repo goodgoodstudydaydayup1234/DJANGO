@@ -30,3 +30,13 @@ def detail(request, id):
     # except:
     #     return HttpResponse('请输入正确的图书id')
 
+
+def delete(request, id):
+    # return HttpResponse('删除成功')
+    BookInfo.objects.get(pk=id).delete()
+    bl = BookInfo.objects.all()
+    return render(request, 'booktest/list.html', {'booklist': bl})
+
+
+# def add(request):
+#     return HttpResponse('添加成功')
