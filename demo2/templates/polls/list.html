@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>问题列表页</title>
+    <link rel="stylesheet" href="/static/css/main.css">
 </head>
 <body>
-    <h2>投票信息</h2>
-    <ul>
-        {% for ques in queslist %}
-            <li><a href="/detail/{{ques.id}}/">{{ques.qname}}</a></li>
-        {% empty %}
-            暂无投票问题
-        {% endfor %}
-    </ul>
+    <div class="container">
+        <h2>投票信息</h2>
+        <ul>
+            {% for ques in queslist %}
+                <li><a href="/detail/{{ques.id}}/">{{ques.qname}}</a></li><br>
+            {% empty %}
+                暂无投票问题
+            {% endfor %}
+        </ul>
+    </div>
 
 </body>
 </html>

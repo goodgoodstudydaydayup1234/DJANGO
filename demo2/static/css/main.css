@@ -1,0 +1,12 @@
+div{
+    width: 1100px;
+    background-color: darkcyan;
+    margin: 20px auto;
+    padding: 20px;
+}
+ul{
+    list-style: none;
+}
+ul>li{
+    text-decoration: none;
+}

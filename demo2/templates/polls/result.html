@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>投票结果</title>
+    <link rel="stylesheet" href="/static/css/main.css">
 </head>
 <body>
-    <ul>
-        <h2>问题：{{ques.qname}}</h2>
-        <h3>投票结果：</h3>
-        {% for choose in ques.choose_set.all %}
-            <li>{{choose.cname}}--{{choose.cvote}}</li>
-        {% endfor %}
-    </ul>
-    <a href="/">返回首页</a>
+    <div>
+        <ul>
+            <h2>问题：{{ques.qname}}</h2>
+            <h3>投票结果：</h3>
+            {% for choose in ques.choose_set.all %}
+                <li>{{choose.cname}}--{{choose.cvote}}</li>
+            {% endfor %}
+        </ul>
+        <a href="/">返回首页</a>
+    </div>
 </body>
 </html>
