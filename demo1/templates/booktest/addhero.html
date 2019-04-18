@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加角色</title>
+</head>
+<body>
+
+    <form action="{% url 'booktest:addherohandle' %}" method="post">
+        <input type="hidden" value="{{bookid}}" name="bookid">
+
+        角色名字：<input type="text" name="hname">
+        <br><br>
+        角色性别：<input type="radio" value=True name="hgender" checked>True <input type="radio" value=False name="hgender">False
+        <br><br>
+        角色技能：<input type="text" name="hcontent">
+        <br><br>
+        <input type="submit" value="添加">
+    </form>
+</body>
+</html>

@@ -8,5 +8,6 @@ urlpatterns = [
     url(r'^booklist/$', views.list, name='list'),
     url(r'^bookdetail/(\d+)/$', views.detail, name='detail'),
     url(r'^bookdelete/(\d+)/$', views.delete, name='delete'),
-    # url(r'^bookadd/$', views.add, name='add'),
+    url(r'^addhero/(\d+)/$', views.addhero, name='addhero'),
+    url(r'^addherohandle/$', views.addherohandle, name='addherohandle'),
 ]

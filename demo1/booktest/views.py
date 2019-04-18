@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-from .models import BookInfo
+from django.http import HttpResponse, HttpResponseRedirect
+from .models import BookInfo, HeroInfo
 from django.template import loader
 
 
@@ -35,8 +35,32 @@ def delete(request, id):
     # return HttpResponse('删除成功')
     BookInfo.objects.get(pk=id).delete()
     bl = BookInfo.objects.all()
-    return render(request, 'booktest/list.html', {'booklist': bl})
+    # return render(request, 'booktest/list.html', {'booklist': bl})
+    return HttpResponseRedirect('/booklist/', {'booklist': bl})
 
 
-# def add(request):
-#     return HttpResponse('添加成功')
+def addhero(request, bookid):
+    # return HttpResponse('角色添加成功')
+    # books = BookInfo.objects.all()
+    return render(request, 'booktest/addhero.html', {'bookid': bookid})
+
+
+def addherohandle(request):
+    bookid = request.POST['bookid']
+    # bookid =5
+    hname = request.POST["hname"]
+    hgender = request.POST["hgender"]
+    hcontent = request.POST["hcontent"]
+
+    book = BookInfo.objects.get(pk=bookid)
+
+    h = HeroInfo()
+    h.hname = hname
+    h.hgender = hgender
+    h.hcontent = hcontent
+    h.hbook = book
+
+    h.save()
+
+    return HttpResponseRedirect('/bookdetail/'+str(bookid), {'book': book})
+
