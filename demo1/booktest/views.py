@@ -9,6 +9,7 @@ def index(request):
     return render(request, 'booktest/index.html', {'username': 'xcy'})
     # temp = loader.get_template('booktest/index.html')
     # result = temp.render({'username': 'xcy'})
+    # print(result, type(result))
     # return HttpResponse(result)
 
 
