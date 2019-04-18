@@ -36,7 +36,7 @@ def delete(request, id):
     BookInfo.objects.get(pk=id).delete()
     bl = BookInfo.objects.all()
     # return render(request, 'booktest/list.html', {'booklist': bl})
-    return HttpResponseRedirect('/booklist/', {'booklist': bl})
+    return HttpResponseRedirect('/list/', {'booklist': bl})
 
 
 def addhero(request, bookid):
@@ -62,5 +62,5 @@ def addherohandle(request):
 
     h.save()
 
-    return HttpResponseRedirect('/bookdetail/'+str(bookid), {'book': book})
+    return HttpResponseRedirect('/detail/'+str(bookid), {'book': book})
 
