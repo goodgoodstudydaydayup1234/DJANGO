@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>问题列表页</title>
+</head>
+<body>
+    <h2>投票信息</h2>
+    <ul>
+        {% for ques in queslist %}
+            <li><a href="/detail/{{ques.id}}/">{{ques.qname}}</a></li>
+        {% empty %}
+            暂无投票问题
+        {% endfor %}
+    </ul>
+
+</body>
+</html>

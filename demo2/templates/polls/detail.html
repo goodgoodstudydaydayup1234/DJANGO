@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>详情页</title>
+</head>
+<body>
+    <h2>问题：{{ques.qname}}</h2>
+    <ul>
+        投票选项：<br><br>
+        <form action="">
+            {% for choose in ques.choose_set.all %}
+                <li><input type="radio" name="vote">{{choose}}</li>
+            {% endfor %}
+            <br><input type="submit" value="投票">
+        </form>
+
+    </ul>
+
+
+</body>
+</html>
